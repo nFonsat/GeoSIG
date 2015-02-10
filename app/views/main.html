@@ -1,0 +1,30 @@
+<form ng-submit="submitSexToDec()">
+  <fieldset>
+    <legend>Sex to Dec</legend>
+    <label style="display:block"> Degrées
+      <input type="number" ng-model="sexDeg" name ="degree" />
+    </label>
+    <label style="display:block"> Minutes
+      <input type="number" ng-model="sexMin" name ="minutes" />
+    </label>
+    <label style="display:block"> Secondes
+      <input type="number" ng-model="sexSec" name ="seconds" />
+    </label>
+    <input type="submit" value="Calculer" style="display:block" />
+  </fieldset>
+</form>
+
+<p>{{ sexRes }}</p>
+
+<form ng-submit="submitDecToSex()">
+  <fieldset>
+    <legend>Latitude</legend>
+    <label style="display:block"> Valeur
+      <input type="number" ng-model="decValue" name ="Valeur" />
+    </label>
+    <input type="submit" value="Calculer" style="display:block" />
+  </fieldset>
+
+</form>
+
+<p>{{ decRes }}</p>
