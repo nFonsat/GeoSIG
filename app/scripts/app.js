@@ -10,6 +10,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/draw', {
+        templateUrl: 'views/draw.html',
+        controller: 'DrawCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
