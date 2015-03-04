@@ -1,0 +1,26 @@
+body {
+  background-color: #f5faff; }
+
+h1 {
+  margin: 0px;
+  padding: 0px; }
+
+header {
+  background-color: #ccc;
+  height: 80px; }
+  header h1 {
+    text-align: center; }
+
+#principal {
+  width: 700px;
+  margin: 10px auto; }
+  #principal form {
+    margin-top: 20px; }
+  #principal table {
+    width: 100%;
+    border-collapse: collapse; }
+    #principal table td, #principal table th {
+      text-align: center;
+      border: 1px solid black; }
+
+/*# sourceMappingURL=style.css.map */

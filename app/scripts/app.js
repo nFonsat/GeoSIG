@@ -2,7 +2,8 @@
 
 angular
   .module('sigApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngStorage'
   ])
   .config(function ($routeProvider) {
     $routeProvider
