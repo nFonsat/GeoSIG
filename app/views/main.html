@@ -1,30 +1,69 @@
-<form ng-submit="submitSexToDec()">
-  <fieldset>
-    <legend>Sex to Dec</legend>
-    <label style="display:block"> Degrées
-      <input type="number" ng-model="sexDeg" name ="degree" />
-    </label>
-    <label style="display:block"> Minutes
-      <input type="number" ng-model="sexMin" name ="minutes" />
-    </label>
-    <label style="display:block"> Secondes
-      <input type="number" ng-model="sexSec" name ="seconds" />
-    </label>
-    <input type="submit" value="Calculer" style="display:block" />
-  </fieldset>
-</form>
+<div id="principal">
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>coordonnée latitude</th>
+          <th>coordonnée longitude</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="point in pointList track by $index">
+          <td>{{ point.latitude }}</td>
+          <td>{{ point.longitude }}</td>
+          <td><input type="button" value="Supprimer" ng-click="removePoint($index)"></td>
+        </tr>
+      </tbody>
+    </table>
+    <form class="form-inline" ng-submit="submitAddPoint()">
+      <fieldset>
+        <legend>Ajout d'un point</legend>
+        <div class="form-group">
+          <label for="input_latitude">Latitude</label>
+          <input id="input_latitude" class="form-control" type="number" ng-model="latitude" name ="latitude" />
+        </div>
+        <div class="form-group">
+          <label for="input_longitude">Longitude</label>
+          <input id="input_longitude" class="form-control" type="number" ng-model="longitude" name ="longitude" />
+        </div>
+        <input type="submit" value="Ajouter" />
+      </fieldset>
+    </form>
+  </div>
+  <form ng-submit="submitSexToDec()">
+    <fieldset>
+      <legend>Sex to Dec</legend>
+      <div class="form-group">
+        <label for="input_degree">Degrées</label>
+          <input id="input_degree" class="form-control" type="number" ng-model="sexDeg" name ="degree" />
+      </div>
+      <div class="form-group">
+        <label for="input_minute">Minutes</label>
+          <input id="input_minute" class="form-control" type="number" ng-model="sexMin" name ="minutes" />
+          
+      </div>
+      <div class="form-group">
+        <label for="input_seconde">Secondes</label>
+          <input id="input_seconde" class="form-control" type="number" ng-model="sexSec" name ="seconds" />
+      </div>
+      <input type="submit" value="Calculer" />
+    </fieldset>
+  </form>
 
-<p>{{ sexRes }}</p>
+  <p>{{ sexRes }}</p>
 
-<form ng-submit="submitDecToSex()">
-  <fieldset>
-    <legend>Latitude</legend>
-    <label style="display:block"> Valeur
-      <input type="number" ng-model="decValue" name ="Valeur" />
-    </label>
-    <input type="submit" value="Calculer" style="display:block" />
-  </fieldset>
+  <form ng-submit="submitDecToSex()">
+    <fieldset>
+      <legend>Latitude</legend>
+      <label style="display:block"> Valeur
+        <input type="number" ng-model="decValue" name ="Valeur" />
+      </label>
+      <input type="submit" value="Calculer" style="display:block" />
+    </fieldset>
+  </form>
 
-</form>
+  <p>{{ decRes }}</p>
 
-<p>{{ decRes }}</p>
+  <input id="input_coef" class="form-control" type="number" ng-model="x" name ="coef" />
+</div>
